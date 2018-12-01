@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C927804621B331D3008329CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927804521B331D3008329CA /* AppDelegate.swift */; };
+		C927804821B331D3008329CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927804721B331D3008329CA /* ViewController.swift */; };
+		C927804B21B331D3008329CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C927804921B331D3008329CA /* Main.storyboard */; };
+		C927804E21B331D3008329CA /* TidalClock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C927804C21B331D3008329CA /* TidalClock.xcdatamodeld */; };
+		C927805021B331D4008329CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C927804F21B331D4008329CA /* Assets.xcassets */; };
+		C927805321B331D4008329CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C927805121B331D4008329CA /* LaunchScreen.storyboard */; };
+		C927805E21B331D4008329CA /* TidalClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927805D21B331D4008329CA /* TidalClockTests.swift */; };
+		C927806921B331D5008329CA /* TidalClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927806821B331D5008329CA /* TidalClockUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C927805A21B331D4008329CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C927803A21B331D3008329CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C927804121B331D3008329CA;
+			remoteInfo = TidalClock;
+		};
+		C927806521B331D5008329CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C927803A21B331D3008329CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C927804121B331D3008329CA;
+			remoteInfo = TidalClock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C927804221B331D3008329CA /* TidalClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TidalClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C927804521B331D3008329CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C927804721B331D3008329CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C927804A21B331D3008329CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C927804D21B331D3008329CA /* TidalClock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TidalClock.xcdatamodel; sourceTree = "<group>"; };
+		C927804F21B331D4008329CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C927805221B331D4008329CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C927805421B331D4008329CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C927805921B331D4008329CA /* TidalClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TidalClockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C927805D21B331D4008329CA /* TidalClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidalClockTests.swift; sourceTree = "<group>"; };
+		C927805F21B331D4008329CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C927806421B331D5008329CA /* TidalClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TidalClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C927806821B331D5008329CA /* TidalClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidalClockUITests.swift; sourceTree = "<group>"; };
+		C927806A21B331D5008329CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C927803F21B331D3008329CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C927805621B331D4008329CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C927806121B331D5008329CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C927803921B331D3008329CA = {
+			isa = PBXGroup;
+			children = (
+				C927804421B331D3008329CA /* TidalClock */,
+				C927805C21B331D4008329CA /* TidalClockTests */,
+				C927806721B331D5008329CA /* TidalClockUITests */,
+				C927804321B331D3008329CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C927804321B331D3008329CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C927804221B331D3008329CA /* TidalClock.app */,
+				C927805921B331D4008329CA /* TidalClockTests.xctest */,
+				C927806421B331D5008329CA /* TidalClockUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C927804421B331D3008329CA /* TidalClock */ = {
+			isa = PBXGroup;
+			children = (
+				C927804521B331D3008329CA /* AppDelegate.swift */,
+				C927804721B331D3008329CA /* ViewController.swift */,
+				C927804921B331D3008329CA /* Main.storyboard */,
+				C927804F21B331D4008329CA /* Assets.xcassets */,
+				C927805121B331D4008329CA /* LaunchScreen.storyboard */,
+				C927805421B331D4008329CA /* Info.plist */,
+				C927804C21B331D3008329CA /* TidalClock.xcdatamodeld */,
+			);
+			path = TidalClock;
+			sourceTree = "<group>";
+		};
+		C927805C21B331D4008329CA /* TidalClockTests */ = {
+			isa = PBXGroup;
+			children = (
+				C927805D21B331D4008329CA /* TidalClockTests.swift */,
+				C927805F21B331D4008329CA /* Info.plist */,
+			);
+			path = TidalClockTests;
+			sourceTree = "<group>";
+		};
+		C927806721B331D5008329CA /* TidalClockUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C927806821B331D5008329CA /* TidalClockUITests.swift */,
+				C927806A21B331D5008329CA /* Info.plist */,
+			);
+			path = TidalClockUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C927804121B331D3008329CA /* TidalClock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C927806D21B331D5008329CA /* Build configuration list for PBXNativeTarget "TidalClock" */;
+			buildPhases = (
+				C927803E21B331D3008329CA /* Sources */,
+				C927803F21B331D3008329CA /* Frameworks */,
+				C927804021B331D3008329CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TidalClock;
+			productName = TidalClock;
+			productReference = C927804221B331D3008329CA /* TidalClock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C927805821B331D4008329CA /* TidalClockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C927807021B331D5008329CA /* Build configuration list for PBXNativeTarget "TidalClockTests" */;
+			buildPhases = (
+				C927805521B331D4008329CA /* Sources */,
+				C927805621B331D4008329CA /* Frameworks */,
+				C927805721B331D4008329CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C927805B21B331D4008329CA /* PBXTargetDependency */,
+			);
+			name = TidalClockTests;
+			productName = TidalClockTests;
+			productReference = C927805921B331D4008329CA /* TidalClockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C927806321B331D5008329CA /* TidalClockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C927807321B331D5008329CA /* Build configuration list for PBXNativeTarget "TidalClockUITests" */;
+			buildPhases = (
+				C927806021B331D5008329CA /* Sources */,
+				C927806121B331D5008329CA /* Frameworks */,
+				C927806221B331D5008329CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C927806621B331D5008329CA /* PBXTargetDependency */,
+			);
+			name = TidalClockUITests;
+			productName = TidalClockUITests;
+			productReference = C927806421B331D5008329CA /* TidalClockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C927803A21B331D3008329CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Robert Corlett";
+				TargetAttributes = {
+					C927804121B331D3008329CA = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					C927805821B331D4008329CA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C927804121B331D3008329CA;
+					};
+					C927806321B331D5008329CA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C927804121B331D3008329CA;
+					};
+				};
+			};
+			buildConfigurationList = C927803D21B331D3008329CA /* Build configuration list for PBXProject "TidalClock" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C927803921B331D3008329CA;
+			productRefGroup = C927804321B331D3008329CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C927804121B331D3008329CA /* TidalClock */,
+				C927805821B331D4008329CA /* TidalClockTests */,
+				C927806321B331D5008329CA /* TidalClockUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C927804021B331D3008329CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C927805321B331D4008329CA /* LaunchScreen.storyboard in Resources */,
+				C927805021B331D4008329CA /* Assets.xcassets in Resources */,
+				C927804B21B331D3008329CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C927805721B331D4008329CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C927806221B331D5008329CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C927803E21B331D3008329CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C927804821B331D3008329CA /* ViewController.swift in Sources */,
+				C927804E21B331D3008329CA /* TidalClock.xcdatamodeld in Sources */,
+				C927804621B331D3008329CA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C927805521B331D4008329CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C927805E21B331D4008329CA /* TidalClockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C927806021B331D5008329CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C927806921B331D5008329CA /* TidalClockUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C927805B21B331D4008329CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C927804121B331D3008329CA /* TidalClock */;
+			targetProxy = C927805A21B331D4008329CA /* PBXContainerItemProxy */;
+		};
+		C927806621B331D5008329CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C927804121B331D3008329CA /* TidalClock */;
+			targetProxy = C927806521B331D5008329CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C927804921B331D3008329CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C927804A21B331D3008329CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C927805121B331D4008329CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C927805221B331D4008329CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C927806B21B331D5008329CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C927806C21B331D5008329CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C927806E21B331D5008329CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = TidalClock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.TidalClock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C927806F21B331D5008329CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = TidalClock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.TidalClock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C927807121B331D5008329CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = TidalClockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.TidalClockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TidalClock.app/TidalClock";
+			};
+			name = Debug;
+		};
+		C927807221B331D5008329CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = TidalClockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.TidalClockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TidalClock.app/TidalClock";
+			};
+			name = Release;
+		};
+		C927807421B331D5008329CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = TidalClockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.TidalClockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TidalClock;
+			};
+			name = Debug;
+		};
+		C927807521B331D5008329CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LWUH73QLPT;
+				INFOPLIST_FILE = TidalClockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RBC.TidalClockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TidalClock;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C927803D21B331D3008329CA /* Build configuration list for PBXProject "TidalClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C927806B21B331D5008329CA /* Debug */,
+				C927806C21B331D5008329CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C927806D21B331D5008329CA /* Build configuration list for PBXNativeTarget "TidalClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C927806E21B331D5008329CA /* Debug */,
+				C927806F21B331D5008329CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C927807021B331D5008329CA /* Build configuration list for PBXNativeTarget "TidalClockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C927807121B331D5008329CA /* Debug */,
+				C927807221B331D5008329CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C927807321B331D5008329CA /* Build configuration list for PBXNativeTarget "TidalClockUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C927807421B331D5008329CA /* Debug */,
+				C927807521B331D5008329CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C927804C21B331D3008329CA /* TidalClock.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C927804D21B331D3008329CA /* TidalClock.xcdatamodel */,
+			);
+			currentVersion = C927804D21B331D3008329CA /* TidalClock.xcdatamodel */;
+			path = TidalClock.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C927803A21B331D3008329CA /* Project object */;
+}
