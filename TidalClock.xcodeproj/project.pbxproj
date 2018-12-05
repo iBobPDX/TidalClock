@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		C927804621B331D3008329CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927804521B331D3008329CA /* AppDelegate.swift */; };
-		C927804821B331D3008329CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927804721B331D3008329CA /* ViewController.swift */; };
+		C927804821B331D3008329CA /* TideCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927804721B331D3008329CA /* TideCollectionViewController.swift */; };
 		C927804B21B331D3008329CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C927804921B331D3008329CA /* Main.storyboard */; };
 		C927804E21B331D3008329CA /* TidalClock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C927804C21B331D3008329CA /* TidalClock.xcdatamodeld */; };
 		C927805021B331D4008329CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C927804F21B331D4008329CA /* Assets.xcassets */; };
 		C927805321B331D4008329CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C927805121B331D4008329CA /* LaunchScreen.storyboard */; };
 		C927805E21B331D4008329CA /* TidalClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927805D21B331D4008329CA /* TidalClockTests.swift */; };
 		C927806921B331D5008329CA /* TidalClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927806821B331D5008329CA /* TidalClockUITests.swift */; };
+		C9B40F2221B874120040EE16 /* Pixels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B40F2121B874120040EE16 /* Pixels.swift */; };
+		C9B40F2421B874420040EE16 /* PixelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B40F2321B874420040EE16 /* PixelCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 /* Begin PBXFileReference section */
 		C927804221B331D3008329CA /* TidalClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TidalClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C927804521B331D3008329CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C927804721B331D3008329CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C927804721B331D3008329CA /* TideCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideCollectionViewController.swift; sourceTree = "<group>"; };
 		C927804A21B331D3008329CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C927804D21B331D3008329CA /* TidalClock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TidalClock.xcdatamodel; sourceTree = "<group>"; };
 		C927804F21B331D4008329CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		C927806421B331D5008329CA /* TidalClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TidalClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C927806821B331D5008329CA /* TidalClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidalClockUITests.swift; sourceTree = "<group>"; };
 		C927806A21B331D5008329CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9B40F2121B874120040EE16 /* Pixels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixels.swift; sourceTree = "<group>"; };
+		C9B40F2321B874420040EE16 /* PixelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				C927804521B331D3008329CA /* AppDelegate.swift */,
-				C927804721B331D3008329CA /* ViewController.swift */,
+				C927804721B331D3008329CA /* TideCollectionViewController.swift */,
+				C9B40F2321B874420040EE16 /* PixelCollectionViewCell.swift */,
+				C9B40F2121B874120040EE16 /* Pixels.swift */,
 				C927804921B331D3008329CA /* Main.storyboard */,
 				C927804F21B331D4008329CA /* Assets.xcassets */,
 				C927805121B331D4008329CA /* LaunchScreen.storyboard */,
@@ -259,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C927804821B331D3008329CA /* ViewController.swift in Sources */,
+				C9B40F2221B874120040EE16 /* Pixels.swift in Sources */,
+				C927804821B331D3008329CA /* TideCollectionViewController.swift in Sources */,
 				C927804E21B331D3008329CA /* TidalClock.xcdatamodeld in Sources */,
 				C927804621B331D3008329CA /* AppDelegate.swift in Sources */,
+				C9B40F2421B874420040EE16 /* PixelCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
