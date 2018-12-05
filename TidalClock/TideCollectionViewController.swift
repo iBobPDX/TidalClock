@@ -10,8 +10,7 @@ import UIKit
 
 class TideCollectionViewController: UICollectionViewController {
 
-    private var longPressGestureRecognizer: UILongPressGestureRecognizer?
-    
+    private var tapGestureRecognizer: UITapGestureRecognizer!
     let pixels = Pixels()
     
     override func viewDidLoad() {
@@ -19,22 +18,14 @@ class TideCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view, typically from a nib.
         collectionView.alwaysBounceVertical = false
         collectionView.register(PixelCollectionViewCell.self, forCellWithReuseIdentifier: PixelCollectionViewCell.reuseIdentifier)
-        longPressGestureRecognizer = UILongPressGestureRecognizer.init(target: self, action: #selector(handleLongPress(_:)))
+        tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(handleLongPress(_:)))
+        collectionView.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    @objc func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
-        switch(gesture.state) {
-        case .began:
-            guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
-                break
-            }
-            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
-        case .changed:
-            collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
-        case .ended:
-            collectionView.endInteractiveMovement()
-        default:
-            collectionView.cancelInteractiveMovement()
+    @objc func handleLongPress(_ gesture: UITapGestureRecognizer) {
+        pixels.flashLight { [weak self] in
+            print("flash")
+            self?.collectionView.reloadData()
         }
     }
 }
@@ -53,12 +44,6 @@ extension TideCollectionViewController {
         cell.backgroundColor = pixels.pixelArray[indexPath.section][indexPath.row]
         return cell
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {}
 }
 
 // MARK - UICollectionViewFlowLayoutDelegate

@@ -15,6 +15,7 @@ class Pixels {
     static let gray = UIColor(rgb: 0xCFCFCF)
     static let red = UIColor(rgb: 0xA22208)
     static let yellow = UIColor(rgb: 0xDCD41C)
+    static let lightYellow = UIColor(rgb: 0xfcf34b)
     
     static let scene: [[UIColor]] = [
         [.white, .white, .white, .white, .white, .white, .white, .white, .white, .white, .white, .white, .white, .white, .white, .white],
@@ -52,9 +53,26 @@ class Pixels {
         ]
     
     var pixelArray: [[UIColor]] = scene
+    var lightTimer: Timer?
     
     func setColor(_ color: UIColor, forItemAt indexPath: IndexPath) {
         pixelArray[indexPath.section][indexPath.row] = color
+    }
+    
+    func flashLight(_ completion:@escaping () -> Void) {
+        if let t = lightTimer {
+            t.invalidate()
+            lightTimer = nil
+            return
+        }
+        
+        lightTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] (timer) in
+            self?.pixelArray[18][11] = (self?.pixelArray[18][11] == Pixels.lightYellow) ? Pixels.yellow : Pixels.lightYellow
+            self?.pixelArray[18][12] = (self?.pixelArray[18][12] == Pixels.lightYellow) ? Pixels.yellow : Pixels.lightYellow
+            self?.pixelArray[19][11] = (self?.pixelArray[19][11] == Pixels.lightYellow) ? Pixels.yellow : Pixels.lightYellow
+            self?.pixelArray[19][12] = (self?.pixelArray[19][12] == Pixels.lightYellow) ? Pixels.yellow : Pixels.lightYellow
+            completion()
+        }
     }
 }
 
