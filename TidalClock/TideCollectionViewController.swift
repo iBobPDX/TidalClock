@@ -13,20 +13,57 @@ class TideCollectionViewController: UICollectionViewController {
     private var tapGestureRecognizer: UITapGestureRecognizer!
     let pixels = Pixels()
     
+    let session = URLSession(configuration: .default)
+    var dataTask: URLSessionDataTask?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         collectionView.alwaysBounceVertical = false
         collectionView.register(PixelCollectionViewCell.self, forCellWithReuseIdentifier: PixelCollectionViewCell.reuseIdentifier)
-        tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(handleLongPress(_:)))
+        tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(handleTap(_:)))
         collectionView.addGestureRecognizer(tapGestureRecognizer)
+        
+        
     }
     
-    @objc func handleLongPress(_ gesture: UITapGestureRecognizer) {
-        pixels.flashLight { [weak self] in
-            print("flash")
-            self?.collectionView.reloadData()
+    func fetchWaterLevel() {
+        dataTask?.cancel()
+        
+        if var urlComponents = URLComponents(string: "https://tidesandcurrents.noaa.gov/api/datagetter") {
+            urlComponents.query = "date=latest&station=8452660&product=water_level&datum=MLLW&units=english&time_zone=gmt&application=tidal_clock&format=json"
+            
+            guard let url = urlComponents.url else { return }
+            
+            dataTask = session.dataTask(with: url) { [weak self] data, response, error in
+                defer { self?.dataTask = nil }
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let data = data,
+                    let response = response as? HTTPURLResponse,
+                    response.statusCode == 200 {
+                    let tideLevel = TideLevel(data)
+                    
+                    self?.pixels.setWaterLevel(tideLevel) { [weak self] in
+                        DispatchQueue.main.async {
+                            self?.collectionView.reloadData()
+                        }
+                    }
+                }
+            }
+
+            dataTask?.resume()
         }
+    }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        fetchWaterLevel()
+
+//        pixels.flashLight { [weak self] in
+//            print("flash")
+//            self?.collectionView.reloadData()
+//        }
     }
 }
 
