@@ -11,18 +11,21 @@ import UIKit
 class TideCollectionViewController: UICollectionViewController {
 
     private var tapGestureRecognizer: UITapGestureRecognizer!
-    let pixels = Pixels()
+    var pixels: Pixels = Pixels()
+    
     
     let session = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         collectionView.alwaysBounceVertical = false
         collectionView.register(PixelCollectionViewCell.self, forCellWithReuseIdentifier: PixelCollectionViewCell.reuseIdentifier)
         tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(handleTap(_:)))
         collectionView.addGestureRecognizer(tapGestureRecognizer)
+        
+        pixels.delegate = self
         
         
     }
@@ -37,7 +40,7 @@ class TideCollectionViewController: UICollectionViewController {
             
             dataTask = session.dataTask(with: url) { [weak self] data, response, error in
                 defer { self?.dataTask = nil }
-                
+
                 if let error = error {
                     print(error.localizedDescription)
                 } else if let data = data,
@@ -45,11 +48,7 @@ class TideCollectionViewController: UICollectionViewController {
                     response.statusCode == 200 {
                     let tideLevel = TideLevel(data)
                     
-                    self?.pixels.setWaterLevel(tideLevel) { [weak self] in
-                        DispatchQueue.main.async {
-                            self?.collectionView.reloadData()
-                        }
-                    }
+                    self?.pixels.setWaterLevel(tideLevel)
                 }
             }
 
@@ -113,3 +112,10 @@ extension TideCollectionViewController {
     }
 }
 
+extension TideCollectionViewController: DisplayDelegate {
+    func didUpdatePixels() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+}
