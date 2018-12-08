@@ -22,16 +22,16 @@ class Pixels {
         pixelArray[indexPath.section][indexPath.row] = color
     }
     
-    func setWaterLevel(_ level: TideLevel) {
+    func setWaterLevel(_ level: Tide) {
         flashLight(5)
         pixelArray = LightHouse.scene
         
-        guard let height = level.waterHeight, height > 0.5 else {
+        guard level.waterLevel > 0.5 else {
             self.delegate?.didUpdatePixels()
             return
         }
         
-        let bars = waterBarsForLevel(height)
+        let bars = waterBarsForLevel(level.waterLevel)
         
         for l in 1...bars {
             let index = self.pixelArray.count - l
@@ -66,10 +66,8 @@ class Pixels {
         }
 
         lightTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] (timer) in
-            print("timer fired")
             if let strongSelf = self {
                 strongSelf.lampIsLit() ? strongSelf.dimLamp() : strongSelf.lightLamp()
-                strongSelf.delegate?.didUpdatePixels()
             }
         }
     }
@@ -85,6 +83,7 @@ class Pixels {
         self.pixelArray[18][12] = LightHouse.lightYellow
         self.pixelArray[19][11] = LightHouse.lightYellow
         self.pixelArray[19][12] = LightHouse.lightYellow
+        self.delegate?.didUpdatePixels()
     }
     
     func dimLamp() {
@@ -92,9 +91,18 @@ class Pixels {
         self.pixelArray[18][12] = LightHouse.yellow
         self.pixelArray[19][11] = LightHouse.yellow
         self.pixelArray[19][12] = LightHouse.yellow
+        self.delegate?.didUpdatePixels()
     }
     
     func lampIsLit() -> Bool {
         return self.pixelArray[18][11] == LightHouse.lightYellow
+    }
+    
+    func errorLamp() {
+        self.pixelArray[18][11] = .red
+        self.pixelArray[18][12] = .red
+        self.pixelArray[19][11] = .red
+        self.pixelArray[19][12] = .red
+        self.delegate?.didUpdatePixels()
     }
 }

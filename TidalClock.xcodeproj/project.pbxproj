@@ -15,11 +15,14 @@
 		C927805321B331D4008329CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C927805121B331D4008329CA /* LaunchScreen.storyboard */; };
 		C927805E21B331D4008329CA /* TidalClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927805D21B331D4008329CA /* TidalClockTests.swift */; };
 		C927806921B331D5008329CA /* TidalClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927806821B331D5008329CA /* TidalClockUITests.swift */; };
+		C93235F621BC5B3F0002E29F /* TideService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93235F521BC5B3F0002E29F /* TideService.swift */; };
+		C93235F821BC5B890002E29F /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93235F721BC5B890002E29F /* HttpClient.swift */; };
+		C93235FA21BC5B990002E29F /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93235F921BC5B990002E29F /* ResponseParser.swift */; };
+		C93235FE21BC5BBE0002E29F /* Tide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93235FD21BC5BBE0002E29F /* Tide.swift */; };
 		C9B40F2221B874120040EE16 /* Pixels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B40F2121B874120040EE16 /* Pixels.swift */; };
 		C9B40F2421B874420040EE16 /* PixelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B40F2321B874420040EE16 /* PixelCollectionViewCell.swift */; };
 		C9B40F2621B99E660040EE16 /* LightHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B40F2521B99E660040EE16 /* LightHouse.swift */; };
 		C9B40F2821B99ED80040EE16 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B40F2721B99ED80040EE16 /* UIColor+Hex.swift */; };
-		C9B40F2A21B9BD1E0040EE16 /* TideLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B40F2921B9BD1E0040EE16 /* TideLevel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +57,14 @@
 		C927806421B331D5008329CA /* TidalClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TidalClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C927806821B331D5008329CA /* TidalClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidalClockUITests.swift; sourceTree = "<group>"; };
 		C927806A21B331D5008329CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C93235F521BC5B3F0002E29F /* TideService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideService.swift; sourceTree = "<group>"; };
+		C93235F721BC5B890002E29F /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		C93235F921BC5B990002E29F /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
+		C93235FD21BC5BBE0002E29F /* Tide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tide.swift; sourceTree = "<group>"; };
 		C9B40F2121B874120040EE16 /* Pixels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixels.swift; sourceTree = "<group>"; };
 		C9B40F2321B874420040EE16 /* PixelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9B40F2521B99E660040EE16 /* LightHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightHouse.swift; sourceTree = "<group>"; };
 		C9B40F2721B99ED80040EE16 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		C9B40F2921B9BD1E0040EE16 /* TideLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideLevel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 		C927804421B331D3008329CA /* TidalClock */ = {
 			isa = PBXGroup;
 			children = (
+				C932360121BC5C1D0002E29F /* Networking */,
+				C93235FD21BC5BBE0002E29F /* Tide.swift */,
 				C927804521B331D3008329CA /* AppDelegate.swift */,
 				C927804721B331D3008329CA /* TideCollectionViewController.swift */,
 				C9B40F2321B874420040EE16 /* PixelCollectionViewCell.swift */,
@@ -120,7 +128,6 @@
 				C927804C21B331D3008329CA /* TidalClock.xcdatamodeld */,
 				C9B40F2521B99E660040EE16 /* LightHouse.swift */,
 				C9B40F2721B99ED80040EE16 /* UIColor+Hex.swift */,
-				C9B40F2921B9BD1E0040EE16 /* TideLevel.swift */,
 			);
 			path = TidalClock;
 			sourceTree = "<group>";
@@ -141,6 +148,16 @@
 				C927806A21B331D5008329CA /* Info.plist */,
 			);
 			path = TidalClockUITests;
+			sourceTree = "<group>";
+		};
+		C932360121BC5C1D0002E29F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C93235F521BC5B3F0002E29F /* TideService.swift */,
+				C93235F721BC5B890002E29F /* HttpClient.swift */,
+				C93235F921BC5B990002E29F /* ResponseParser.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,14 +291,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B40F2A21B9BD1E0040EE16 /* TideLevel.swift in Sources */,
+				C93235F821BC5B890002E29F /* HttpClient.swift in Sources */,
 				C9B40F2821B99ED80040EE16 /* UIColor+Hex.swift in Sources */,
+				C93235FE21BC5BBE0002E29F /* Tide.swift in Sources */,
 				C9B40F2221B874120040EE16 /* Pixels.swift in Sources */,
 				C927804821B331D3008329CA /* TideCollectionViewController.swift in Sources */,
 				C927804E21B331D3008329CA /* TidalClock.xcdatamodeld in Sources */,
 				C9B40F2621B99E660040EE16 /* LightHouse.swift in Sources */,
 				C927804621B331D3008329CA /* AppDelegate.swift in Sources */,
 				C9B40F2421B874420040EE16 /* PixelCollectionViewCell.swift in Sources */,
+				C93235FA21BC5B990002E29F /* ResponseParser.swift in Sources */,
+				C93235F621BC5B3F0002E29F /* TideService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

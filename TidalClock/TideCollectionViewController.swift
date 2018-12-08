@@ -32,37 +32,20 @@ class TideCollectionViewController: UICollectionViewController {
     
     func fetchWaterLevel() {
         dataTask?.cancel()
-        
-        if var urlComponents = URLComponents(string: "https://tidesandcurrents.noaa.gov/api/datagetter") {
-            urlComponents.query = "date=latest&station=8452660&product=water_level&datum=MLLW&units=english&time_zone=gmt&application=tidal_clock&format=json"
-            
-            guard let url = urlComponents.url else { return }
-            
-            dataTask = session.dataTask(with: url) { [weak self] data, response, error in
-                defer { self?.dataTask = nil }
-
-                if let error = error {
-                    print(error.localizedDescription)
-                } else if let data = data,
-                    let response = response as? HTTPURLResponse,
-                    response.statusCode == 200 {
-                    let tideLevel = TideLevel(data)
-                    
-                    self?.pixels.setWaterLevel(tideLevel)
-                }
+        dataTask = TideService().loadTideData(completion: { [weak self] (tide, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                self?.pixels.errorLamp()
+            } else if let tide = tide {
+                self?.pixels.setWaterLevel(tide)
             }
-
-            dataTask?.resume()
-        }
+        })
+        
+        dataTask?.resume()
     }
     
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
         fetchWaterLevel()
-
-//        pixels.flashLight { [weak self] in
-//            print("flash")
-//            self?.collectionView.reloadData()
-//        }
     }
 }
 

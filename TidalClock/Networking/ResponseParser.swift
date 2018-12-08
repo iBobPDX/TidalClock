@@ -1,8 +1,8 @@
 //
-//  TideLevel.swift
+//  ResponseParser.swift
 //  TidalClock
 //
-//  Created by Robert Corlett on 12/6/18.
+//  Created by Robert Corlett on 12/8/18.
 //  Copyright © 2018 Robert Corlett. All rights reserved.
 //
 
@@ -13,32 +13,38 @@ enum TideLevelError: Error {
     case JsonParseError
 }
 
-struct TideLevel {
+protocol ResponseParser {
+    func parseData(data: Data, error: inout TideLevelError?) -> JSON?
+}
+
+struct TideResponseParser: ResponseParser {
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
         return formatter
     }()
     
-    var waterHeight: Float? = nil
-    var updatedAt: Date? = nil
-    var parseError: TideLevelError? = nil
-    
-    init(_ data: Data) {
+    func parseData(data: Data, error: inout TideLevelError?) -> JSON? {
+        
         guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
             print("Error converting data to JSON")
-            parseError = .DeserializationError
-            return
+            error = .DeserializationError
+            return nil
         }
         
         guard let tideArray = json?["data"] as? [[String : Any]], let tideData = tideArray.first, let heightString = tideData["v"] as? String, let dateString = tideData["t"] as? String else {
             print("Error parsing data from json")
-            parseError = .JsonParseError
-            return
+            error = .JsonParseError
+            return nil
         }
         
-        
-        waterHeight = Float(heightString)
-        updatedAt = dateFormatter.date(from: dateString)
+        guard let height = Float(heightString), let date = dateFormatter.date(from: dateString) else {
+            print("Error parsing data from json")
+            error = .JsonParseError
+            return nil
+        }
+            
+            
+        return ["level" : height, "lastUpdated" : date]
     }
 }
