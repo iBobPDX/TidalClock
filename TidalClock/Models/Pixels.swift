@@ -19,6 +19,7 @@ class Pixels {
             self.delegate?.didUpdatePixels()
         }
     }
+    
     var lightTimer: Timer?
     weak var delegate: DisplayDelegate?
     

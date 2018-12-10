@@ -13,8 +13,6 @@ class TideCollectionViewController: UICollectionViewController {
     private var tapGestureRecognizer: UITapGestureRecognizer!
     var pixels: Pixels = Pixels()
     
-    
-    let session = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     
     override func viewDidLoad() {
@@ -26,8 +24,6 @@ class TideCollectionViewController: UICollectionViewController {
         collectionView.addGestureRecognizer(tapGestureRecognizer)
         
         pixels.delegate = self
-        
-        
     }
     
     func fetchWaterLevel() {
@@ -69,9 +65,12 @@ extension TideCollectionViewController {
 extension TideCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize = self.view.bounds.inset(by: self.view.safeAreaInsets)
-        
-        let size = CGSize.init(width: screenSize.width / CGFloat(pixels.pixelArray[indexPath.section].count), height: screenSize.height / CGFloat(pixels.pixelArray.count))
+        let size = CGSize.init(width: screenSize.width / CGFloat(pixels.pixelArray[indexPath.section].count) - 1, height: screenSize.height / CGFloat(pixels.pixelArray.count) - 1)
         return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
