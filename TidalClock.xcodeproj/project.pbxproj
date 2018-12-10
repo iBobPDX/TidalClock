@@ -10,7 +10,6 @@
 		C927804621B331D3008329CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927804521B331D3008329CA /* AppDelegate.swift */; };
 		C927804821B331D3008329CA /* TideCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927804721B331D3008329CA /* TideCollectionViewController.swift */; };
 		C927804B21B331D3008329CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C927804921B331D3008329CA /* Main.storyboard */; };
-		C927804E21B331D3008329CA /* TidalClock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C927804C21B331D3008329CA /* TidalClock.xcdatamodeld */; };
 		C927805021B331D4008329CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C927804F21B331D4008329CA /* Assets.xcassets */; };
 		C927805321B331D4008329CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C927805121B331D4008329CA /* LaunchScreen.storyboard */; };
 		C927805E21B331D4008329CA /* TidalClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927805D21B331D4008329CA /* TidalClockTests.swift */; };
@@ -47,7 +46,6 @@
 		C927804521B331D3008329CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C927804721B331D3008329CA /* TideCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideCollectionViewController.swift; sourceTree = "<group>"; };
 		C927804A21B331D3008329CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C927804D21B331D3008329CA /* TidalClock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TidalClock.xcdatamodel; sourceTree = "<group>"; };
 		C927804F21B331D4008329CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C927805221B331D4008329CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C927805421B331D4008329CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,19 +113,16 @@
 		C927804421B331D3008329CA /* TidalClock */ = {
 			isa = PBXGroup;
 			children = (
+				C932360421BC77410002E29F /* Models */,
 				C932360121BC5C1D0002E29F /* Networking */,
-				C93235FD21BC5BBE0002E29F /* Tide.swift */,
 				C927804521B331D3008329CA /* AppDelegate.swift */,
 				C927804721B331D3008329CA /* TideCollectionViewController.swift */,
 				C9B40F2321B874420040EE16 /* PixelCollectionViewCell.swift */,
-				C9B40F2121B874120040EE16 /* Pixels.swift */,
 				C927804921B331D3008329CA /* Main.storyboard */,
 				C927804F21B331D4008329CA /* Assets.xcassets */,
 				C927805121B331D4008329CA /* LaunchScreen.storyboard */,
 				C927805421B331D4008329CA /* Info.plist */,
-				C927804C21B331D3008329CA /* TidalClock.xcdatamodeld */,
-				C9B40F2521B99E660040EE16 /* LightHouse.swift */,
-				C9B40F2721B99ED80040EE16 /* UIColor+Hex.swift */,
+				C932360521BC77AA0002E29F /* UIKit Extensions */,
 			);
 			path = TidalClock;
 			sourceTree = "<group>";
@@ -158,6 +153,24 @@
 				C93235F921BC5B990002E29F /* ResponseParser.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C932360421BC77410002E29F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C93235FD21BC5BBE0002E29F /* Tide.swift */,
+				C9B40F2121B874120040EE16 /* Pixels.swift */,
+				C9B40F2521B99E660040EE16 /* LightHouse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C932360521BC77AA0002E29F /* UIKit Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9B40F2721B99ED80040EE16 /* UIColor+Hex.swift */,
+			);
+			path = "UIKit Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +309,6 @@
 				C93235FE21BC5BBE0002E29F /* Tide.swift in Sources */,
 				C9B40F2221B874120040EE16 /* Pixels.swift in Sources */,
 				C927804821B331D3008329CA /* TideCollectionViewController.swift in Sources */,
-				C927804E21B331D3008329CA /* TidalClock.xcdatamodeld in Sources */,
 				C9B40F2621B99E660040EE16 /* LightHouse.swift in Sources */,
 				C927804621B331D3008329CA /* AppDelegate.swift in Sources */,
 				C9B40F2421B874420040EE16 /* PixelCollectionViewCell.swift in Sources */,
@@ -630,19 +642,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C927804C21B331D3008329CA /* TidalClock.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C927804D21B331D3008329CA /* TidalClock.xcdatamodel */,
-			);
-			currentVersion = C927804D21B331D3008329CA /* TidalClock.xcdatamodel */;
-			path = TidalClock.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C927803A21B331D3008329CA /* Project object */;
 }

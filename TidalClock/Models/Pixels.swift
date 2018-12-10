@@ -14,7 +14,11 @@ protocol DisplayDelegate: class {
 }
 
 class Pixels {
-    var pixelArray: [[UIColor?]] = LightHouse.scene
+    var pixelArray: [[UIColor?]] = LightHouse.scene {
+        didSet {
+            self.delegate?.didUpdatePixels()
+        }
+    }
     var lightTimer: Timer?
     weak var delegate: DisplayDelegate?
     
@@ -22,16 +26,16 @@ class Pixels {
         pixelArray[indexPath.section][indexPath.row] = color
     }
     
-    func setWaterLevel(_ level: Tide) {
+    func setWaterLevel(_ tide: Tide) {
         flashLight(5)
         pixelArray = LightHouse.scene
         
-        guard level.waterLevel > 0.5 else {
-            self.delegate?.didUpdatePixels()
+        guard tide.waterLevel > 0.5 else {
             return
         }
         
-        let bars = waterBarsForLevel(level.waterLevel)
+        // Translate raw tide height into number of rows to fill with water
+        let bars = barCountForLevel(tide.waterLevel)
         
         for l in 1...bars {
             let index = self.pixelArray.count - l
@@ -39,11 +43,9 @@ class Pixels {
                 return LightHouse.blue
             }
         }
-        
-        self.delegate?.didUpdatePixels()
     }
     
-    func waterBarsForLevel(_ level: Float) -> Int {
+    func barCountForLevel(_ level: Float) -> Int {
         print("Tide Level = \(level)")
         let bars = Int(ceil(level))
         print("Water Bars = \(bars)")
@@ -83,7 +85,6 @@ class Pixels {
         self.pixelArray[18][12] = LightHouse.lightYellow
         self.pixelArray[19][11] = LightHouse.lightYellow
         self.pixelArray[19][12] = LightHouse.lightYellow
-        self.delegate?.didUpdatePixels()
     }
     
     func dimLamp() {
@@ -91,7 +92,6 @@ class Pixels {
         self.pixelArray[18][12] = LightHouse.yellow
         self.pixelArray[19][11] = LightHouse.yellow
         self.pixelArray[19][12] = LightHouse.yellow
-        self.delegate?.didUpdatePixels()
     }
     
     func lampIsLit() -> Bool {
@@ -103,6 +103,5 @@ class Pixels {
         self.pixelArray[18][12] = .red
         self.pixelArray[19][11] = .red
         self.pixelArray[19][12] = .red
-        self.delegate?.didUpdatePixels()
     }
 }

@@ -21,8 +21,8 @@ struct LightHouse {
 /*      0       1       2       3       4       5       6       7       8       9       10      11      12      13      14      15  */
 /* 0 */ [nil,   nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    yellow, yellow, yellow, yellow, yellow, yellow, yellow],
 /* 1 */ [nil,   nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    yellow, yellow, yellow, yellow, yellow, yellow],
-/* 2 */ [nil,   nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    yellow, yellow, yellow, yellow, yellow],
-/* 3 */ [nil,   nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    yellow, yellow, yellow, yellow],
+/* 2 */ [nil,   nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    yellow, yellow, yellow, yellow, yellow], //This is the sun.
+/* 3 */ [nil,   nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    yellow, yellow, yellow, yellow], //It looks bad.
 /* 4 */ [nil,   nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    yellow, yellow, yellow],
 /* 5 */ [nil,   nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    yellow, yellow],
 /* 6 */ [nil,   nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    nil,    yellow],

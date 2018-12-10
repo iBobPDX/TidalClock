@@ -8,12 +8,12 @@
 
 import Foundation
 
+typealias JSON = [String : Any]
+
 struct Tide {
     var waterLevel: Float
     var lastUpdated: Date
 }
-
-typealias JSON = [String : Any]
 
 extension Tide {
     init?(json: JSON) {
